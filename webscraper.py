@@ -8,11 +8,15 @@ with open("GUSS_AI_Target_Webpages.csv", "r") as file:
     csvreader = csv.reader(file)
     header = next(csvreader)
     for url in csvreader:
-        urls.append(url[1])
+        urls.append("https://" + url[1])
 
 url = urls[0]
 
 data = requests.get(url)
 html = BeautifulSoup(data.text, "html.parser")
 
-print(html)
+main = html.find("main")
+
+content = main.findAll("p")
+
+print(main)
