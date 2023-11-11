@@ -15,8 +15,5 @@ url = urls[0]
 data = requests.get(url)
 html = BeautifulSoup(data.text, "html.parser")
 
-main = html.find("main")
-
-content = main.findAll("p")
-
-print(main)
+content = html.find("main").get_text()
+print(content)
