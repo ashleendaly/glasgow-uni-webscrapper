@@ -9,6 +9,7 @@ packages = [{include = "glasgow_uni_webscrapper"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 bs4 = "^0.0.1"
+requests = "^2.31.0"
 
 
 [build-system]
