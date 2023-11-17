@@ -15,5 +15,12 @@ url = urls[0]
 data = requests.get(url)
 html = BeautifulSoup(data.text, "html.parser")
 
-content = html.find("main").get_text()
-print(content)
+main = html.find("main")
+content = main.findAll("div", {"class": "maincontent"})
+
+text = ""
+
+for item in content:
+    text += item.get_text()
+
+print(text)
