@@ -10,7 +10,7 @@ with open("GUSS_AI_Target_Webpages.csv", "r") as file:
     for url in csvreader:
         urls.append("https://" + url[1])
 
-url = urls[0]
+url = urls[0] # using student finances url for report
 
 data = requests.get(url)
 html = BeautifulSoup(data.text, "html.parser")
